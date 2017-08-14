@@ -1,0 +1,92 @@
+$main-colour: #eee;
+
+body {
+  background-color: $main-colour;
+  padding-top: 65px;
+  height: 100%;
+}
+
+
+.brand-header {
+  float: right !important;
+  z-index: 9999;
+}
+
+.navbar-header {
+  width:100%;
+}
+
+.col-menu-container {
+  padding-left: 0;
+}
+
+.content-transition {
+  transition: all 0.5s ease;
+}
+
+.menu-container {
+  height: 94%;
+  width: 75px;
+}
+
+.menu-container-open {
+  height: 94%;
+}
+
+#menu_container .panel-footer{
+  position: fixed;
+  background: transparent;
+  border: none;
+  bottom: 0;
+}
+
+.menu-button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+
+@media (max-width:768px) {
+  .menu-slide {
+    display: block !important;
+    position:fixed !important;
+    z-index:1000 !important;
+    left:-635px;
+    height:100%;
+    transition: all .5s ease-out;
+    padding-left: 0;
+  }
+
+  .glyphicon-menu {
+    display: none;
+  }
+
+  .menu-slide-open {
+    left: 0;
+  }
+}
+
+
+@media (min-width:768px) {
+  .menu-slide{
+    position: fixed;
+    left: 0;
+    padding-left: 0;
+    transition: all 0.5s ease;
+    height: 100%;
+  }
+
+  .glyphicon-header {
+    display: none;
+  }
+}
+
+#wrapper {
+   padding-left: 0;
+   -webkit-transition: all 0.5s ease;
+   -moz-transition: all 0.5s ease;
+   -o-transition: all 0.5s ease;
+   transition: all 0.5s ease;
+}
+
