@@ -1,6 +1,6 @@
 // @flow
-import { REQUEST_EMPLOYEES }
-  from '../constants/employee-list-actions-constants';
+// import { REQUEST_EMPLOYEES }
+//   from '../constants/employee-list-actions-constants';
 
 function requestEmployees(): { type: string } {
   return { type: 'REQUEST_EMPLOYEES' };

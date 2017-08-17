@@ -7,10 +7,9 @@ const PeopleInput = ({ event, people, index }) =>
   <ComponentTwo>
     <img
       style={{ height: '50%', width: '100%' }}
-      src="../images/cube.gif" alt="loader"
+      src="./images/cube.gif" alt="loader"
     />
     <InputListItem
-
       people={people}
       event={event}
       index={index}

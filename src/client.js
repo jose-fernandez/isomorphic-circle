@@ -6,12 +6,13 @@ import Root from './components/Root/Root';
 import rootSaga from './sagas';
 import getRoutes from './routes';
 import { history } from './services';
+// import { hashHistory } from 'react-router';
+
 import configureStore from './store/configureStore';
 import config from './config';
 
 const dest = document.getElementById('content');
 const store = configureStore(window.__data); // eslint-disable-line
-console.log("CLIENT ROOT");
 
 GoogleAnalytics.initialize(config.app.googleAnalytics.appId);
 

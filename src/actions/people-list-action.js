@@ -1,6 +1,6 @@
 // @flow
-import { REQUEST_PEOPLE, REQUEST_INPUT, RESET }
-  from '../constants/people-list-actions-constants';
+// import { REQUEST_PEOPLE, REQUEST_INPUT, RESET }
+//   from '../constants/people-list-actions-constants';
 
 function requestPeople(): { type: string } {
   return { type: 'REQUEST_PEOPLE' };

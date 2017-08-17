@@ -1,42 +1,43 @@
 // @flow
+
 export type employeeStateType = {
-  +loading: boolean,
-  +error: boolean,
-  +employees: Array<{}>,
-  +orderBy: string
-}
+  loading: boolean,
+  error: boolean,
+  employees: Array,
+  orderBy: string
+};
 
 export type peopleStateType = {
-  +loading: boolean,
-  +error: boolean,
-  +people: Array<{}>,
-  +index: number
-}
+  loading: boolean,
+  error: boolean,
+  people: Array,
+  index: number
+};
 
 export type menuStateType = {
-  +MenuVisible: boolean,
-  +viewportWidth: number | null
-}
+  MenuVisible: boolean,
+  viewportWidth: number | null
+};
 
 export type newsStateType = {
-  +loading: boolean,
-  +news: Array<{}>,
-  +orderBy: string,
-  +lastFetch: string
-}
+  loading: boolean,
+  orderBy: string,
+  lastFetch: string,
+  news: Array
+};
 
 export type employeeContainerType = {
-  +employeeList: employeeStateType
-}
+  employeeList: employeeStateType
+};
 
 export type peopleContainerType = {
-  +peopleList: peopleStateType
-}
+  peopleList: peopleStateType
+};
 
 export type menuContainerType = {
-  +menu: menuStateType
-}
+  menu: menuStateType
+};
 
 export type newsContainerType = {
-  +newsList: newsStateType
-}
+  newsList: newsStateType
+};

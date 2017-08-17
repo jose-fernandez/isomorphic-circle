@@ -5,9 +5,9 @@ import { Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { EmployeeListActions } from '../../actions/index';
 import { bindActionCreators } from 'redux';
-import employeeContainerType from './../../reducers/types';
+import type { employeeContainerType } from './../../reducers/types';
 
-export class EmployeesContainer extends Component {
+class EmployeesContainer extends Component {
 
   componentDidMount() {
     this.props.actions.requestEmployees();

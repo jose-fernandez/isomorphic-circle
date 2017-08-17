@@ -1,4 +1,12 @@
-{ "extends": ["eslint-config-airbnb"],
+{
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "extends": [
+    "eslint-config-airbnb",
+    "plugin:flowtype/recommended"
+  ],
   "env": {
     "browser": true,
     "node": true,
@@ -26,7 +34,9 @@
     "no-confusing-arrow": [2, {"allowParens": true}]
   },
   "plugins": [
-    "react", "import"
+    "react",
+    "import",
+    "flowtype"
   ],
   "settings": {
     "import/parser": "babel-eslint",

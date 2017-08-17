@@ -1,5 +1,5 @@
 // @flow
-import { TOGGLE_MENU } from '../constants/menu-actions-constants';
+// import { TOGGLE_MENU } from '../constants/menu-actions-constants';
 
 const MenuActions: Object = {
   toggleMenu(): { type: string } {

@@ -5,10 +5,10 @@ import NewsList from './NewsList';
 import { connect } from 'react-redux';
 import { NewsListActions } from '../../actions';
 import { bindActionCreators } from 'redux';
-import newsContainerType from './../../reducers/types';
+import type { newsContainerType } from './../../reducers/types';
 
 
-export class NewsContainer extends Component {
+class NewsContainer extends Component {
   componentDidMount() {
     this.props.actions.requestNews();
   }

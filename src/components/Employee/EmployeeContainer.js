@@ -6,9 +6,9 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { EmployeeListActions } from '../../actions/index';
-import employeeContainerType from './../../reducers/types';
+import type { employeeContainerType } from './../../reducers/types';
 
-export class EmployeeContainer extends Component {
+class EmployeeContainer extends Component {
   componentDidMount() {
     this.props.actions.requestEmployees();
   }

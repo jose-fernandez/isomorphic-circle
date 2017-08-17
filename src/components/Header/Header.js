@@ -12,7 +12,6 @@ const Header = ({ actions }) => (
         <Glyphicon
           glyph="align-justify"
           onClick={actions.toggleMenu}
-          className="glyphicon-header"
         />
       </Navbar.Brand>
     </Navbar.Header>

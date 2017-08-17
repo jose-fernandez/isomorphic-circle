@@ -2,7 +2,7 @@ import has from 'lodash/has';
 import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router, RouterContext } from 'react-router';
-import DevTools from '../DevTools/DevTools';
+// import DevTools from '../DevTools/DevTools';
 import GoogleAnalytics from 'react-ga';
 
 export default class Root extends Component {
@@ -22,14 +22,14 @@ export default class Root extends Component {
   }
   render() {
     const { store, history, routes, type, renderProps } = this.props;
-    console.log('TYPE --> ', type)
+    // console.log('TYPE --> ', type)
     return (
       <Provider store={store}>
         <div>
           {type === 'server'
             ? <RouterContext {...renderProps} />
-            : <Router history={history} routes={routes} onUpdate={this.onUpdate} />}
-          <DevTools />
+            : <Router history={history} routes={routes} />}
+          {/* <DevTools />*/}
         </div>
       </Provider>
     );

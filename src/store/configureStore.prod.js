@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware, { END } from 'redux-saga';
 import rootReducer from '../reducers';
@@ -11,10 +12,6 @@ export default function configureStore(initialState) {
     initialState,
     applyMiddleware(sagaMiddleware)
   );
-	console.log("CONFIGURE.STORE.PROD")
-
-
-	store.runSaga = sagaMiddleware.run(rootSaga);
 	if (module.hot) {
 		// Enable Webpack hot module replacement for reducers
 		module.hot.accept('../reducers', () => {
@@ -22,6 +19,7 @@ export default function configureStore(initialState) {
 			store.replaceReducer(nextReducer);
 		});
 	}
+	store.runSaga = sagaMiddleware.run;
   store.close = () => store.dispatch(END);
 
   return store;

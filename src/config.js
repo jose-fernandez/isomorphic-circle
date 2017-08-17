@@ -10,15 +10,15 @@ const environment = {
 module.exports = Object.assign({
   host: process.env.HOST || 'localhost',
   port: process.env.PORT || '3000',
-  apiBaseUrl: process.env.API_URL || 'https://api.github.com',
+  apiBaseUrl: process.env.API_URL || 'https://randomuser.me/api/?results=6',
   app: {
     googleAnalytics: {
       appId: process.env.GOOGLE_ANALYTIC_ID || 'UA-XXXXXXXX-X'
     },
-    title: 'React Universal Saga',
-    description: 'Universal React Starter Kit ft. Redux Saga',
+    title: 'Dev Circle',
+    description: 'Universal React Implemented in Circle ft. Redux Saga',
     head: {
-      titleTemplate: 'React Universal Saga',
+      titleTemplate: 'Dev Circle',
       meta: [
         { name: 'description', content: 'Universal React Starter Kit ft. Redux Saga' },
         { charset: 'utf-8' },

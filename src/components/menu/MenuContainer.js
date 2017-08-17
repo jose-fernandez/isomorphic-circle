@@ -1,3 +1,4 @@
+/* eslint-disable indent,no-mixed-spaces-and-tabs */
 // @flow
 import React, { Component } from 'react';
 import MenuList from './MenuList';
@@ -5,11 +6,11 @@ import { Panel, Glyphicon, Button } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { MenuActions } from '../../actions/index';
-import menuContainerType from './../../reducers/types';
+import { menuContainerType } from './../../reducers/types';
 
-export class MenuContainer extends Component {
+class MenuContainer extends Component {
   getItems() {
-    return (
+	  return (
       [
         { title: 'Employees', url: '/EmployeesContainer', glyph: 'user', key: 0 },
         { title: 'News', url: '/News', glyph: 'globe', key: 1 },
@@ -20,10 +21,11 @@ export class MenuContainer extends Component {
   }
 
   render() {
-	  console.log("MENU CONTAINER", this.props);
-	  let clases: string = (this.props.menu && this.props.menu.MenuVisible) ?
+	  // noinspection JSAnnotator
+	  let clases: string = (this.props.menu !== undefined && this.props.menu.MenuVisible) ?
       'menu-container-open' : 'menu-container';
-    let glyphiconShow: string = (this.props.menu && this.props.menu.MenuVisible) ?
+    // noinspection JSAnnotator
+	  let glyphiconShow: string = (this.props.menu !== undefined && this.props.menu.MenuVisible) ?
       'chevron-left' : 'chevron-right';
     return (
       <Panel
@@ -42,7 +44,7 @@ export class MenuContainer extends Component {
           </Button>
         }
       >
-        <MenuList items={this.getItems()} /> visibility={this.props.menu.MenuVisible} />
+        <MenuList items={this.getItems()} visibility={this.props.menu.MenuVisible} />
       </Panel>
     );
   }
@@ -53,6 +55,7 @@ MenuContainer.propTypes = {
   actions: React.PropTypes.object.isRequired,
 };
 
+// noinspection JSAnnotator
 const mapStateToProps = (state: menuContainerType) => (
   {
     menu: state.menu,

@@ -1,13 +1,14 @@
 // @flow
 import { TOGGLE_MENU } from '../constants/menu-actions-constants';
-import type { menuStateType } from './types';
+import { menuStateType } from './types';
 
+// noinspection JSAnnotator
 const initialState: menuStateType = {
   MenuVisible: false,
   viewportWidth: typeof window === 'object' ? window.innerWidth : null,
 };
-console.log("MENU REDUCER", initialState);
 
+// noinspection JSAnnotator
 export default function menu(
   state: menuStateType = initialState,
   action: Object = {}): menuStateType {

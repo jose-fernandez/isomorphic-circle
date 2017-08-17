@@ -28,7 +28,7 @@
   ],
   "main": "bin/server.js",
   "scripts": {
-    "start": "better-npm-run start-dev",
+    "start": "better-npm-run start-prod",
     "build": "better-npm-run build",
     "postinstall": "npm run build",
     "lint": "eslint -c .eslintrc src",
@@ -140,6 +140,7 @@
     "eslint": "2.13.1",
     "eslint-config-airbnb": "9.0.1",
     "eslint-loader": "^1.0.0",
+    "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-import": "^1.9.2",
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.2.2",

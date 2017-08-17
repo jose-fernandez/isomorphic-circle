@@ -21,13 +21,12 @@ export default class Root extends Component {
   }
   render() {
     const { store, history, routes, type, renderProps } = this.props;
-    console.log('ROOT PROD', store.getState())
     return (
       <Provider store={store}>
         <div>
           {type === 'server'
             ? <RouterContext {...renderProps} />
-            : <Router history={history} routes={routes} onUpdate={this.onUpdate} />}
+            : <Router history={history} routes={routes} />}
         </div>
       </Provider>
     );

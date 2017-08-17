@@ -2,8 +2,7 @@ import React from 'react';
 import { Image } from 'react-bootstrap';
 import { Wallpaper, PersonalInfo, Email, Location, Container } from '../styles';
 
-const PeopleListItem = ({ people, index }) =>
-
+const PeopleListItem = ({ people }) =>
   <Wallpaper
     style={{
       display: people.display ? 'block' : 'none',
@@ -30,7 +29,6 @@ const PeopleListItem = ({ people, index }) =>
 
 
 PeopleListItem.propTypes = {
-  index: React.PropTypes.number.isRequired,
   people: React.PropTypes.object.isRequired,
 };
 

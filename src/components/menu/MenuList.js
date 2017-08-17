@@ -11,7 +11,9 @@ const getMenuItems = (items: Array<{}>, visibility: boolean) => (
   items.map((item, index) => renderMenuItem(item, index, visibility))
 );
 
-const MenuList = (props: {items: Array<{}>, visibility: boolean}) => {
+const MenuList = (props: {// noinspection JSAnnotator
+	items: Array, // noinspection JSAnnotator
+	visibility: boolean}) => {
   const items = getMenuItems(props.items, props.visibility);
   return (
     <ButtonGroup vertical block>

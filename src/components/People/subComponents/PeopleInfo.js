@@ -5,7 +5,7 @@ import { ComponentOne } from '../styles';
 
 const renderPeopleListItemView = (people: {}, index: number) => (
   <PeopleListItem
-    key={index} people={people} index={index}
+    key={index} people={people}
   />
 );
 

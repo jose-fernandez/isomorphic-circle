@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-expressions,no-param-reassign */
 import { call, put, take } from 'redux-saga/effects';
 import { REQUEST_PEOPLE, REQUEST_PEOPLE_SUCCESS, REQUEST_PEOPLE_FAIL }
     from '../constants/people-list-actions-constants';
+// import { fetchPeople } from '../services/api/index';
 
 export function fetchPeople() {
   return fetch(
@@ -36,7 +38,7 @@ export function* getPeople() {
 
 export function* requestPeople() {
   while (true) {// eslint-disable-line
-   yield take(REQUEST_PEOPLE);
-   yield call(getPeople);
+    yield take(REQUEST_PEOPLE);
+    yield call(getPeople);
   }
 }

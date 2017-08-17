@@ -6,12 +6,12 @@ import { Panel, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { PeopleListActions } from '../../actions/index';
 import { bindActionCreators } from 'redux';
-import peopleContainerType from './../../reducers/types';
+import type { peopleContainerType } from './../../reducers/types';
 import { PeopleInput, PeopleInfo, Results, Loader } from './subComponents/index';
 
 let mark = 0;
 
-export class PeopleContainer extends Component {
+class PeopleContainer extends Component {
   componentDidMount() {
     if (this.props.peopleList.people.length <= 0) {
       this.props.actions.requestPeople();

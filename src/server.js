@@ -7,7 +7,7 @@ import http from 'http';
 import proxy from 'express-http-proxy';
 import path from 'path';
 import url from 'url';
-import { match, createMemoryHistory } from 'react-router';
+import { match, createMemoryHistory, hashHistory } from 'react-router';
 
 import config from './config';
 import configureStore from './store/configureStore';
@@ -55,6 +55,9 @@ app.use((req, res) => {
   }
 
   match({ routes: allRoutes, location: req.url }, (error, redirectLocation, renderProps) => {
+	  // console.log('req.url', req.url);
+	  // console.log('allRoutes', allRoutes);
+	  // console.log('redirectLocation', redirectLocation);
     if (redirectLocation) {
       res.redirect(redirectLocation.pathname + redirectLocation.search);
     } else if (error) {
@@ -62,7 +65,7 @@ app.use((req, res) => {
       res.status(500);
       hydrateOnClient();
     } else if (renderProps) {
-      // console.log('renderProps --> ', renderProps);
+      // console.log('renderProps --> ');
       const rootComponent = (<Root
         store={store}
         routes={allRoutes}
@@ -76,8 +79,8 @@ app.use((req, res) => {
       .map((component) => component.preload(renderProps.params, req))
       .reduce((result, preloader) => result.concat(preloader), []);
 
-	    console.log('PRELOADERS --> ', preloaders);
-
+	    // console.log('PRELOADERS --> ', preloaders);
+	    // console.log('renderprops-------', renderProps);
 
 	    const runTasks = store.runSaga(waitAll(preloaders));
       // console.log('RUNTASK --> ', runTasks);
@@ -93,7 +96,7 @@ app.use((req, res) => {
         console.log(e.stack);
       });
 
-      // store.close();
+      store.close();
     } else {
       res.status(404).send('Not found');
     }

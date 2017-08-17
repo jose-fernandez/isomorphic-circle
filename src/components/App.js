@@ -1,73 +1,53 @@
+/* eslint-disable indent,react/jsx-indent,react/jsx-indent-props */
 // @flow
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { MenuContainer } from './menu/MenuContainer';
+import MenuContainer from './menu/MenuContainer';
 import Header from './Header/Header';
 
 require('../theme/bootstrap-theme.min.scss');
-require('../theme/main.scss');
+require('../theme/circleMain.scss');
 
-export const App = (x) => {
-  console.log('APP.js PROPS --->', x)
-	let contentCol :number = menu.MenuVisible ? 9 : 11;
-	let menuCol: number = menu.MenuVisible ? 3 : 1;
+const App = ({ children, menu }) => {
+	// noinspection JSAnnotator
+	let contentCol :number = (menu && menu.MenuVisible) ? 9 : 11;
+	// noinspection JSAnnotator
+	let menuCol: number = (menu && menu.MenuVisible) ? 3 : 1;
+	// noinspection JSAnnotator
 	const menuSlide: string = 'menu-slide';
-	const opened: string = menu.MenuVisible ? 'menu-slide-open' : '';
+	// noinspection JSAnnotator
+	const opened: string = (menu && menu.MenuVisible) ? 'menu-slide-open' : '';
+	// noinspection JSAnnotator
 	const clases: string = `${menuSlide} ${opened}`;
 	return (
-    <Grid fluid>
-      <Row id="wrapper">
-        <Header />
-        <Col
-          sm={menuCol}
-          xs={10}
-          className={clases}
-        >
-          <MenuContainer />
-        </Col>
-        <Col
-          smOffset={menuCol}
-          sm={contentCol}
-          className="content-transition"
-        >
-          <div>
-            {children}
-          </div>
-        </Col>
-      </Row>
-    </Grid>
-  );
-}
-
-// App.propTypes = {
-//   menu: PropTypes.object.isRequired,
-//   children: PropTypes.node,
-//   location: PropTypes.shape({
-//     pathname: PropTypes.string
-//   }),
-//   params: PropTypes.object
-// };
-
-// function preload() {
-//   return [
-//     [sagaName]
-//   ];
-// }
-// App.preload = preload;
-
-// function mapStateToProps(state) {
-//   return {
-//     errorMessage: state.errorMessage,
-//     inputValue: state.router.pathname.substring(1),
-//     children: PropTypes.node.isRequired,
-//     menu: state.menu,
-//   };
-// }
+		<Grid fluid>
+			<Row id="wrapper">
+				<Header />
+				<Col
+					sm={menuCol}
+					xs={10}
+					className={clases}
+				>
+					<MenuContainer />
+				</Col>
+				<Col
+					smOffset={menuCol}
+					sm={contentCol}
+					className="content-transition"
+				>
+					<div>
+						{children}
+					</div>
+				</Col>
+			</Row>
+		</Grid>
+	);
+};
 
 App.propTypes = {
-	children: PropTypes.node.isRequired,
-	menu: PropTypes.object.isRequired,
+	children: PropTypes.node,
+	menu: PropTypes.object,
 };
 
 const mapStateToProps = state => (
@@ -77,6 +57,5 @@ const mapStateToProps = state => (
 );
 
 export default connect(
-  mapStateToProps
+	mapStateToProps
 )(App);
-
